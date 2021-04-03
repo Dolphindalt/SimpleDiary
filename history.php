@@ -11,16 +11,21 @@
         die();
     }
 
-    $entries = Models::getAllDiaryEntries($_SESSION[SESSION_USERNAME]);
-    if ($entries && !empty($entries)) {
-        foreach ($entries as $entry) {
+    $histories = Models::getAllLoginHistory($_SESSION[SESSION_USERNAME]);
+    if ($histories && !empty($histories)) {
+        foreach ($histories as $history) {
+            $status = $history['status'];
+            $time = $history['attempt_datetime'];
+            $address = $history['ipaddress'];
+            $agent = $history['user_agent'];
             ?>
             <div class='container-wrapper'>
                 <div class='container-header'>
-                    <h4>Entry <?php echo date('d/m/y h:i A', strtotime($entry['entry_datetime'])); ?></h4>
+                    <h4>Login <?php echo $status ?> <?php echo date('d/m/y h:i A', strtotime($time)); ?></h4>
                 </div>
                 <div class='container-content'>
-                    <p><?php echo $entry['entry']; ?></p>
+                    <p>IP Address: <?php echo $address; ?></p>
+                    <p>User agent: <?php echo $agent; ?></p>
                 </div>
             </div>
             <?php
@@ -32,7 +37,7 @@
                 <h4>Woops!</h4>
             </div>
             <div class='container-content'>
-                <p>No entries yet!</p>
+                <p>No login attempts yet!</p>
             </div>
         </div>
         <?php

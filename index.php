@@ -6,8 +6,15 @@
     require_once ROOT_PATH . 'global.php';
     require_once ROOT_PATH . 'header.php';
 ?>
-    <h1>Welcome home</h1>
-    <p>Welcome to Simple Diary, a site for logging your own personal diary. Create an account to get started!</p>
+    <div class='container-wrapper'>
+        <div class='container-header'>
+            <h4>Welcome</h4>
+        </div>
+        <div class='container-content'>
+            <p>Welcome to Simple Diary, a site for logging your own personal diary.</p>
+        </div>
+    </div>
+    
 <?php 
     require_once ROOT_PATH . 'footer.php';
 ?>

@@ -43,6 +43,13 @@ function destroy_session() {
     session_destroy();
 }
 
+function strip_slashes_and_non_spaces($input) {
+    $input = trim($input, "\n\t\0\x0B\r");
+    $input = rtrim($input);
+    $input = ltrim($input);
+    return $input;
+}
+
 if (array_key_exists(SESSION_IP_ADDR, $_SESSION) && $_SESSION[SESSION_IP_ADDR] != getUserIP()) {
     destroy_session();
     session_start();

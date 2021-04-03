@@ -38,10 +38,13 @@
                         if (isset($_SESSION) && array_key_exists(SESSION_LOGGED_IN, $_SESSION) && $_SESSION[SESSION_LOGGED_IN] == true) {
                     ?>
                         <li class='nav-item'>
-                            <a class='nav-link' href='create.php'>Create</a>
+                            <a class='nav-link' href='create.php'>Create Entry</a>
                         </li>
                         <li class='nav-item'>
-                            <a class='nav-link' href='read.php'>Read</a>
+                            <a class='nav-link' href='read.php'>Read Entries</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='history.php'>Login History</a>
                         </li>
                     <?php
                         }

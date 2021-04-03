@@ -72,6 +72,29 @@ class Models {
             $stmt->execute();
         }
     }
+
+    public static function insertNewEntry($username, $entry) {
+        $stmt = Models::getDB()->prepare("INSERT INTO tbl_dairy_entries (username, entry) VALUES (:username, :entry);");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':entry', $entry);
+        $stmt->execute();
+    }
+
+    public static function getAllDiaryEntries($username) {
+        $stmt = Models::getDB()->prepare("SELECT * FROM tbl_dairy_entries WHERE username = (:username) ORDER BY entry_datetime DESC;");
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public static function getAllLoginHistory($username) {
+        $stmt = Models::getDB()->prepare("SELECT * FROM tbl_logon_attempts WHERE username = (:username) ORDER BY attempt_datetime DESC;");
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
 
 ?>
