@@ -1,0 +1,221 @@
+:root {
+    --link-color: #ffa9bf;
+    --dark-text-color: #2e2e2e;
+    --light-text-color: #ffffff;
+    --light-background-color: rgb(255, 169, 186);
+    --darker-background-color: rgb(209, 53, 84);
+    --light-gray-background-color: rgb(211, 211, 211);
+    --container-wrapper: rgb(211, 211, 211);
+    --container-header: rgb(209, 53, 84);
+    --error-text: red;
+}
+
+body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+    margin: 0;
+    color: var(--light-text-color);
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main-body-wrapper {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+.navbar-menu {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--light-gray-background-color);
+}
+
+.site-title {
+    padding: .2em .4em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left-site-title {
+    margin-right: auto;
+}
+
+.right-site-title {
+    width: 13em;
+}
+
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: var(--light-text-color);
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-image {
+    width: 80%;
+    margin: .2rem .4rem .2rem .6rem;
+}
+
+.nav-container {
+    padding: .1em .2em .15em;
+    background-color: var(--darker-background-color);
+    border-top: 1px solid var(--dark-text-color);
+    border-bottom: 1px solid var(--dark-text-color);
+}
+
+.main-container {
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.white-button {
+    padding: 1.1em 1em;
+    text-decoration: none;
+    color: var(--dark-text-color);
+    background-color: var(--light-text-color);
+    border: 1px solid var(--dark-text-color);
+}
+
+.white-button:hover {
+    background-color: var(--light-background-color);
+    color: var(--light-text-color);
+}
+
+.error-text {
+    color: var(--error-text);
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    line-height: 14px * 2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 14px * 2;
+    border: none;
+    border-bottom: 5px solid var(--light-text-color);
+    background: var(--container-wrapper);
+    min-width: 250px;
+    padding-left: 5px;
+    outline: none;
+    color: var(--light-text-color);
+    padding: 12px 0px;
+    padding-left: 0.2em;
+}
+
+textarea:focus {
+    border-bottom: 5px solid var(--darker-background-color);
+}
+
+input[type='text'], input[type='password'] {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    line-height: 14px * 2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 14px * 2;
+    border: none;
+    border-bottom: 5px solid var(--dark-text-color);
+    background: var(--container-wrapper);
+    min-width: 250px;
+    padding-left: 5px;
+    outline: none;
+    color: var(--dark-text-color);
+    padding: 12px 0px;
+    padding-left: 0.2em;
+}
+
+input:focus {
+  border-bottom: 5px solid var(--darker-background-color);
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  line-height: 14px * 2;
+  padding: 5px 20px;
+  background: var(--darker-background-color);
+  letter-spacing: 2px;
+  transition: .2s all ease-in-out;
+  outline: none;
+  border: 1px solid var(--light-text-color);
+  margin: 16px 0px;
+  margin-bottom: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--light-text-color);
+}
+
+button:hover {
+    background: var(--dark-text-color);
+    color: var(--light-text-color);
+    border: 1px solid var(--dark-text-color);
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+/* Container system. */
+.container-wrapper {
+    border: 1px solid;
+    border-color: currentColor;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: var(--container-wrapper);
+    width: 57.69em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-header {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    background-color: var(--container-header);
+    background-repeat: repeat;
+    background-clip: border-box;
+    background-origin: padding-box;
+}
+
+.container-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    background-color: var(--container-wrapper);
+    color: var(--light-text-color);
+}
+/* End container system. */
