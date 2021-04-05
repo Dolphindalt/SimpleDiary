@@ -22,6 +22,7 @@
                 <div class='container-content'>
                     <p><?php echo $entry['entry']; ?></p>
                 </div>
+                <button style='margin-left: 0.5em;' id='entry_<?php echo $entry['id']; ?>' onclick='deleteEntry(this)'>Delete</button>
             </div>
             <?php
         }
@@ -29,10 +30,10 @@
         ?>
         <div class='container-wrapper'>
             <div class='container-header'>
-                <h4>Woops!</h4>
+                <h4>No entries yet!</h4>
             </div>
             <div class='container-content'>
-                <p>No entries yet!</p>
+                <p>Navigate to <a href='create.php'>create</a> to create an entry.</p>
             </div>
         </div>
         <?php

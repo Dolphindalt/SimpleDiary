@@ -34,7 +34,7 @@
         ?>
         <div class='container-wrapper'>
             <div class='container-header'>
-                <h4>Woops!</h4>
+                <h4>No login attempts!</h4>
             </div>
             <div class='container-content'>
                 <p>No login attempts yet!</p>

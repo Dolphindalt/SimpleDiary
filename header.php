@@ -6,6 +6,8 @@
 <head>
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <link rel='stylesheet' type='text/css' href='style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type='text/javascript' src='global.js'></script>
 </head>
 <body>
     <div class='main-body'>
@@ -20,7 +22,9 @@
                     <div class='right-site-title'>
                         <?php
                             if (isset($_SESSION) && array_key_exists(SESSION_LOGGED_IN, $_SESSION) && $_SESSION[SESSION_LOGGED_IN] == true) {
-                                echo "<a class='white-button' href='logout.php'>Logout</a>";
+                                echo "<a style='display: inline-block;' class='white-button' href='logout.php'>Logout</a>";
+                                $username = $_SESSION[SESSION_USERNAME];
+                                echo "<p style='display: inline-block;'>Logged in as $username</p>";
                             } else {
                                 echo "<a class='white-button' href='login.php' style='margin-right: .5em;'>Login</a>";
                                 echo "<a class='white-button' href='register.php'>Register</a>";

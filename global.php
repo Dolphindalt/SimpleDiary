@@ -22,6 +22,23 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+set_exception_handler(function($exception) {
+    require_once ROOT_PATH . 'header.php';
+    ?>
+    <div class='container-wrapper'>
+        <div class='container-header'>
+            <h4>An unknown error has occurred</h4>
+        </div>
+        <div class='container-content'>
+            <p>Go <a href='index.php'>home</a> and cry.</p>
+        </div>
+    </div>
+    <?php 
+    require_once ROOT_PATH . 'footer.php';
+    http_response_code(500);
+    die();
+});
+
 function getUserIP() {
     if(!empty($_SERVER['HTTP_CLIENT_IP'])) {
         //ip from share internet

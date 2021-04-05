@@ -95,6 +95,12 @@ class Models {
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public static function deleteDiaryEntryByID($id) {
+        $stmt = Models::getDB()->prepare("DELETE FROM tbl_dairy_entries WHERE id = (:id);");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 }
 
 ?>

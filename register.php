@@ -109,8 +109,7 @@
                 <span><input class='form-input' type='text' name='middle_initial' id='middle_initial' maxlength='1' placeholder='Middle initial' <?php if (isset($_POST['middle_initial'])) { echo "value='" . $_POST['middle_initial'] . "'"; }?> /></span>
                 <span><input class='form-input' type='text' name='last_name' id='last_name' maxlength='64' placeholder='Last name' <?php if (isset($_POST['last_name'])) { echo "value='" . $_POST['last_name'] . "'"; }?> /></span>
                 <span><input class='form-input' type='password' name='password' id='password' placeholder='Password' /></span>
-                <span><input class='form-input' type='text' name='security_token' id='security_token' placeholder='<?php echo NOT_SECURE_SECURITY_TOKEN; ?>' /></span>
-                <p class='center' style='color:var(--dark-text-color);'>Please enter <?php echo NOT_SECURE_SECURITY_TOKEN; ?> for the CSCI 470 token field.</p>
+                <span><input class='form-input' type='text' name='security_token' id='security_token' placeholder='Security Token' /></span>
                 <button id='loginSubmit' class='center'>Register</button>
                 <?php
                     if (isset($error)) {
